@@ -1,4 +1,8 @@
-<?php include 'randomkode.php';  ?>
+<?php 
+	include 'randomkode.php';
+	include 'koneksi.php';  
+?>
+
 
 <!DOCTYPE html>
 <html>
@@ -16,14 +20,13 @@
   <input type="submit" value ="Ganti" name="ganti">
 </form> 
 
+<br>
+<a href="datakode.php"><button>Lihat Data Kode!</button></a>
+
 </body>
 </html>
 
 <?php
-
-$sql = mysqli_connect('localhost', 'root', '', 'coba') or die ("Koneksi gagal");
-
-
 
 if(isset($_POST['input'])) {
     
@@ -31,5 +34,7 @@ if(isset($_POST['input'])) {
     $query = "INSERT INTO randomkode (randomkode) VALUES('$kode')";
     mysqli_query($sql, $query);
    }
+else if(isset($_POST['datakode'])) {
 
+}
 ?>

@@ -1,0 +1,1 @@
+<?php $sql = mysqli_connect('localhost', 'root', '', 'coba') or die ("Koneksi gagal"); ?>
