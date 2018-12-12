@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 12, 2018 at 05:24 AM
--- Server version: 10.1.36-MariaDB
--- PHP Version: 7.2.10
+-- Generation Time: Dec 12, 2018 at 02:00 PM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -38,19 +38,30 @@ CREATE TABLE `randomkode` (
 --
 
 INSERT INTO `randomkode` (`id`, `randomkode`) VALUES
-(1, 'NAFHLUXv'),
-(2, 'IvNPkQXm'),
-(3, 'bu4DqeUG'),
-(4, 'pxHS2Vcp'),
-(5, '8XoXG2LM'),
-(6, 'wimCoesN'),
-(7, 'T6y7hkJC'),
-(8, '7UBZn77l'),
-(9, 'xVO8C1in'),
-(10, 'EbOVwLiw'),
-(11, 'XmUZAXHm'),
-(12, 'THx21jZu'),
-(13, 'V9vTtUEb');
+(1, 'EdRszybu'),
+(2, '6kfp7C3p');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL,
+  `username` varchar(150) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `alamat` text NOT NULL,
+  `nomor_hp` varchar(12) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `username`, `password`, `alamat`, `nomor_hp`) VALUES
+(1, 'richcy', 'richcy', 'bandung', '123'),
+(2, 'dian', 'dian', 'jakarta', '456');
 
 --
 -- Indexes for dumped tables
@@ -63,6 +74,12 @@ ALTER TABLE `randomkode`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -70,7 +87,13 @@ ALTER TABLE `randomkode`
 -- AUTO_INCREMENT for table `randomkode`
 --
 ALTER TABLE `randomkode`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
