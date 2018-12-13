@@ -36,6 +36,7 @@ if (isset($_POST['login'])) {
 		$_SESSION['username'] = $username;
 		$_SESSION['alamat'] = $row['alamat'];
 		$_SESSION['nomorhp'] = $row['nomor_hp'];
+		$_SESSION['status'] = "login";
 
 		header('Location: coba.php');
     }

@@ -1,7 +1,11 @@
 <?php 
 	include 'randomkode.php';
 	include 'koneksi.php';
-  session_start();  
+  session_start();
+
+  if($_SESSION['status']!="login"){
+    header('Location: login.php');
+  }
 ?>
 
 
@@ -22,7 +26,7 @@
   <?php echo $hasil_1;?>
   <br>
   <input type="submit" value="Submit" name="input">
-  <input type="submit" value ="Ganti" name="ganti">
+  <input type="submit" value="Ganti" name="ganti">
 </form> 
 
 <br>
