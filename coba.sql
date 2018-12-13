@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 12, 2018 at 02:00 PM
+-- Generation Time: Dec 13, 2018 at 06:21 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.2.12
 
@@ -60,8 +60,12 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `alamat`, `nomor_hp`) VALUES
-(1, 'richcy', 'richcy', 'bandung', '123'),
-(2, 'dian', 'dian', 'jakarta', '456');
+(1, 'richcy', 'richcy', 'bandung', '1234'),
+(2, 'dian', 'dian', 'jakarta', '456'),
+(3, '123', '123', 'asd', '123'),
+(4, '123', '123', 'asd', '123'),
+(5, 'asdf', 'asdf', 'asddsv', '454334'),
+(6, '456', '456', 'dfgdf', '456');
 
 --
 -- Indexes for dumped tables
@@ -93,7 +97,7 @@ ALTER TABLE `randomkode`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

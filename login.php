@@ -13,7 +13,11 @@
     <input type="submit" value="Login" name="login">
 
 
+
 </form>
+
+<a href="daftar.php"><button>Daftar!</button></a>
+
 
 </body>
 </html>
@@ -21,11 +25,9 @@
 <?php
 // Always start this first
 session_start();
-
 if (isset($_POST['login'])) {
 	$username = $_POST['username'];
 	$password = $_POST['password'];
-
     // Getting submitted user data from database
     
     $query = "SELECT * FROM user WHERE username='$username' and password='$password'";
@@ -33,13 +35,13 @@ if (isset($_POST['login'])) {
     $check = mysqli_num_rows($result);
 	if($check > 0) {
 		$row = mysqli_fetch_assoc($result);
+		$_SESSION['id'] = $row['id'];
 		$_SESSION['username'] = $username;
+		$_SESSION['password'] = $row['password'];
 		$_SESSION['alamat'] = $row['alamat'];
 		$_SESSION['nomorhp'] = $row['nomor_hp'];
 		$_SESSION['status'] = "login";
-
 		header('Location: coba.php');
     }
 }
 ?>
-
