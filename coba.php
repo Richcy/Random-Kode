@@ -1,28 +1,30 @@
 <?php 
-	include 'randomkode.php';
-	include 'koneksi.php';
-  session_start();  
+  include 'randomkode.php';
+  include 'koneksi.php';
+  session_start();
+  if($_SESSION['status']!="login"){
+    header('Location: login.php');
+  }
 ?>
 
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Coba Random Kode</title>
+  <title>Coba Random Kode</title>
 
 </head>
 <body>
 
-<p><?php echo $_SESSION["username"];?> telah login!</p>
-<p><?php echo $_SESSION["alamat"];?> : ini alamat anda</p>
-<p><?php echo $_SESSION["nomorhp"];?> : ini nomor hp anda</p>
+<p><?php echo $_SESSION["username"];?> telah login!<a href="editprofil.php"><button>Edit Profil Anda</button></a></p>
+
 
 <form method = "POST">
   Kode: 
   <?php echo $hasil_1;?>
   <br>
   <input type="submit" value="Submit" name="input">
-  <input type="submit" value ="Ganti" name="ganti">
+  <input type="submit" value="Ganti" name="ganti">
 </form> 
 
 <br>
@@ -33,7 +35,6 @@
 </html>
 
 <?php
-
 if(isset($_POST['input'])) {
     
     $kode = $hasil_1;
