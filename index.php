@@ -75,7 +75,7 @@ session_start();
                         <a href="halamansimulasi.php">Halaman Simulasi</a>
                     </li>
                     <li>
-                        <a href="contact.php">Contact </a>
+                        <a href="contact.php">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -104,7 +104,7 @@ session_start();
                         </a>
                     </div>
                     <h2 class="brand-before">
-                        <small>SELAMAT MELAKUKAN TRANSAKSI </small>
+                        <small>SELAMAT DATANG DI</small>
                     </h2>
                     <h1 class="brand-name">SIPBO</h1>
                     <hr class="tagline-divider">
@@ -130,8 +130,11 @@ session_start();
                                 <input type="password" class="form-control" name="password">
                             </div>
                            
-                            <div class="form-group col-lg-12">
-                                <input type="submit" value="Login" name="login">
+                            <div class="form-group col-lg-6">
+                                <input type="submit" class="btn btn-primary" value="Login" name="login">
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <a href="daftar.php" class = "btn btn-primary" role="button">Daftar</a>
                             </div>
                         </div>
                     </form>
@@ -149,7 +152,7 @@ session_start();
                     <p>Sistem Pom Bensin online adalah <br>
                        
                         <p> &#49;.  </p>
-                        <p>&#50;.  FORUM TANYA-JAWA</p>
+                        <p>&#50;.  FORUM TANYA-JAWAB</p>
 
             </span>          
                     
@@ -205,16 +208,11 @@ if (isset($_POST['login'])) {
 
 		$row = mysqli_fetch_assoc($result);
 		$_SESSION['id'] = $row['id'];
-		$_SESSION['username'] = $username;
-		$_SESSION['password'] = $row['password'];
-		$_SESSION['alamat'] = $row['alamat'];
-		$_SESSION['nomorhp'] = $row['nomor_hp'];
 		$_SESSION['status'] = "login";
 		echo "<script>alert('anda sukses login');</script>";
 		echo "<script>location='coba.php';</script>";
     }
- else
-	{
+     else{
 		// anda gagal login
 		echo "<script>alert('anda gagal login, username atau password salah!');</script>";
 		echo "<script>location='login.php';</script>";

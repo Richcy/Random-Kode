@@ -16,7 +16,14 @@
 </head>
 <body>
 
-<p><?php echo $_SESSION["username"];?> telah login!<a href="editprofil.php"><button>Edit Profil Anda</button></a></p>
+<?php
+$id = $_SESSION["id"];
+$query1 = "SELECT * FROM user WHERE id = '$id'";
+$result1 = mysqli_query($sql,$query1);
+$row = mysqli_fetch_assoc($result1);
+?>
+
+<p><?php echo $row["username"];?> telah login!<a href="editprofil.php"><button>Edit Profil Anda</button></a></p>
 
 
 <form method = "POST">

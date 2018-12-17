@@ -15,11 +15,19 @@
 </head>
 <body>
 
-<p>Id : <?php echo $_SESSION["id"];?></p>
-<p>Username : <?php echo $_SESSION["username"];?></p>
-<p>Password : <?php echo $_SESSION["password"];?></p>
-<p>Alamat : <?php echo $_SESSION["alamat"];?></p>
-<p>Nomor HP : <?php echo $_SESSION["nomorhp"];?></p>
+<?php
+$id = $_SESSION["id"];
+$query1 = "SELECT * FROM user WHERE id = '$id'";
+$result1 = mysqli_query($sql,$query1);
+$row = mysqli_fetch_assoc($result1);
+
+  ?>
+
+<p>Id : <?php echo $row["id"];?></p>
+<p>Username : <?php echo $row["username"];?></p>
+<p>Password : <?php echo $row["password"];?></p>
+<p>Alamat : <?php echo $row["alamat"];?></p>
+<p>Nomor HP : <?php echo $row["nomor_hp"];?></p>
 
 <form action="" method="post">
     <input type="text" name="username" placeholder="Username Baru">
@@ -38,8 +46,8 @@ if (isset($_POST['edit'])) {
 	$nomorhp = $_POST['nomorhp'];
     // Getting submitted user data from database
     
-    $query = "UPDATE user SET username = '$username', password = '$password', alamat = '$alamat', nomor_hp = '$nomorhp' WHERE id = '$id'";
-    $result = mysqli_query($sql,$query);
+    $query2 = "UPDATE user SET username = '$username', password = '$password', alamat = '$alamat', nomor_hp = '$nomorhp' WHERE id = '$id'";
+    $result2 = mysqli_query($sql,$query2);
 }
 ?>
 
